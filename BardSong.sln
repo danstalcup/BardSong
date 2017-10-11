@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BardSong", "BardSong\BardSong.csproj", "{A84CE4FF-1AAD-42B6-BD7A-0E9CFB21D367}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{C796DC52-C8C3-48F2-9B96-F657F42028C2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{A84CE4FF-1AAD-42B6-BD7A-0E9CFB21D367}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A84CE4FF-1AAD-42B6-BD7A-0E9CFB21D367}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A84CE4FF-1AAD-42B6-BD7A-0E9CFB21D367}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C796DC52-C8C3-48F2-9B96-F657F42028C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C796DC52-C8C3-48F2-9B96-F657F42028C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C796DC52-C8C3-48F2-9B96-F657F42028C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C796DC52-C8C3-48F2-9B96-F657F42028C2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
