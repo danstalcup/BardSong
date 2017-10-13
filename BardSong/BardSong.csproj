@@ -40,6 +40,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IFileWriter.cs" />
+    <Compile Include="Impl\FileWriter.cs" />
+    <Compile Include="Impl\RepositoryWriter.cs" />
+    <Compile Include="IRepositoryWriter.cs" />
     <Compile Include="Repository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

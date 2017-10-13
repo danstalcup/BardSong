@@ -10,7 +10,7 @@ namespace BardSong
     { 
         public string Filepath { get; set; }                   
 
-        public Repository(IWriter writer)
+        public Repository(IRepositoryWriter writer)
         {
             this.writer = writer;
 
@@ -35,7 +35,7 @@ namespace BardSong
             this.writer.Write(this);
         }
 
-        private readonly IWriter writer;
+        private readonly IRepositoryWriter writer;
 
         internal readonly List<object> data;
 

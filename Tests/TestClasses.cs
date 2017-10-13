@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace Tests
 {
-    internal class Test_Base
+    internal class Test_Base : ITest_Base
     {
 
     }
-    internal class Test_A : Test_Base
+    internal class Test_A : Test_Base, ITest_A
     {
 
     }
 
-    internal class Test_B : Test_Base
+    internal class Test_B : Test_Base, ITest_B
     {
 
     }
@@ -31,6 +31,20 @@ namespace Tests
     }
 
     internal class Test_A_B : Test_A
+    {
+
+    }
+
+    internal interface ITest_Base
+    {
+
+    }
+    internal interface ITest_A
+    {
+
+    }
+
+    internal interface ITest_B
     {
 
     }

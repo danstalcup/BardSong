@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BardSong
+namespace Tests
 {
-    public interface IWriter
+    public class RepositoryWriterTests
     {
-        void Write(Repository repository);
     }
 }

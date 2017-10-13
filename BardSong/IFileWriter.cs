@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BardSong.Impl
+namespace BardSong
 {
-    public class Writer : IWriter
+    public interface IFileWriter
     {
+        void WriteToFile(string filepath, string content);
     }
 }

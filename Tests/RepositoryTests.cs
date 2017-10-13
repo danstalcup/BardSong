@@ -51,6 +51,36 @@ namespace Tests
         }
 
         [Test]
+        public void AddThenGet_AddOne_OneWhenGetForImplementedInterfaceCalled()
+        {
+            // act
+            classUnderTest.Add(new Test_A());
+
+            // assert
+            Assert.That(classUnderTest.Get<ITest_A>().Count, Is.EqualTo(1));
+        }
+
+        [Test]
+        public void AddThenGet_AddOne_EmptyWhenGetForOtherInterfaceCalled()
+        {
+            // act
+            classUnderTest.Add(new Test_A());
+
+            // assert
+            Assert.That(classUnderTest.Get<ITest_B>().Count, Is.EqualTo(0));
+        }
+
+        [Test]
+        public void AddThenGet_AddOne_EmptyWhenGetForBaseInterfaceCalled()
+        {
+            // act
+            classUnderTest.Add(new Test_A());
+
+            // assert
+            Assert.That(classUnderTest.Get<ITest_Base>().Count, Is.EqualTo(1));
+        }
+
+        [Test]
         public void AddThenGet_AddOneOfTypeOneOfBaseType_EmptyWhenGetForDifferentTypeCalled()
         {
             // act
@@ -170,6 +200,16 @@ namespace Tests
 
             // assert            
             Assert.That(classUnderTest.Get<Test_Base>().Count, Is.EqualTo(2));
+        }
+
+        [Test]
+        public void Write_CallsWritersWrite()
+        {
+            // act
+            classUnderTest.Write();
+
+            // assert
+            this.mocker.GetMock<IRepositoryWriter>().Verify(iw => iw.Write(classUnderTest), Times.Once());
         }
     }   
             
