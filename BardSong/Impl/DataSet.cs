@@ -24,6 +24,14 @@ namespace BardSong.Impl
             }
         }
 
+        public List<string> DataTypeNames
+        {
+            get
+            {
+                return _dataTypes.Select(dt => dt.Name).ToList();
+            }
+        }
+
         private List<object> _data = new List<object>();
         private HashSet<Type> _dataTypes = new HashSet<Type>();    
     }

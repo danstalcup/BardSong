@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using Newtonsoft.Json;
+
 namespace BardSong.Impl
 {
     public class RepositoryWriter : IRepositoryWriter
@@ -15,7 +17,7 @@ namespace BardSong.Impl
 
         public void Write(Repository repository)
         {
-            throw new NotImplementedException();
+            //JsonConvert.SerializeObject(repository.)
         }
 
         private readonly IFileWriter fileWriter;

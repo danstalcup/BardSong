@@ -11,5 +11,7 @@ namespace BardSong
         List<object> Data { get; } 
 
         HashSet<Type> DataTypes { get; }
+
+        List<string> DataTypeNames { get; }
     }
 }
