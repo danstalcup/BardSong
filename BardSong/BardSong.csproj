@@ -40,7 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IDataSet.cs" />
     <Compile Include="IFileWriter.cs" />
+    <Compile Include="Impl\DataSet.cs" />
     <Compile Include="Impl\FileWriter.cs" />
     <Compile Include="Impl\RepositoryWriter.cs" />
     <Compile Include="IRepositoryWriter.cs" />

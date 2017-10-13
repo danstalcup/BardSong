@@ -4,6 +4,8 @@ using NUnit.Framework;
 using BardSong;
 using AutoMoq;
 using Moq;
+using System.Collections.Generic;
+using BardSong.Impl;
 
 namespace Tests
 {
@@ -16,8 +18,13 @@ namespace Tests
         [SetUp]
         public void SetUp()
         {
-            mocker = new AutoMoqer();
-            classUnderTest = mocker.Create<Repository>();
+            this.mocker = new AutoMoqer();
+            this.classUnderTest = mocker.Create<Repository>();
+
+            var dataSet = new DataSet();
+
+            this.mocker.GetMock<IDataSet>().Setup(ds => ds.Data).Returns(dataSet.Data);
+            this.mocker.GetMock<IDataSet>().Setup(ds => ds.DataTypes).Returns(dataSet.DataTypes);
         }
 
         [Test]

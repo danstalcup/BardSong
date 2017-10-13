@@ -10,24 +10,22 @@ namespace BardSong
     { 
         public string Filepath { get; set; }                   
 
-        public Repository(IRepositoryWriter writer)
+        public Repository(IRepositoryWriter writer, IDataSet dataSet)
         {
             this.writer = writer;
-
-            this.data = new List<object>();
-            this.dataTypes = new HashSet<Type>();
+            this.dataSet = dataSet;           
         }
         
         public void Add(object item)
         {
             var itemType = item.GetType();
-            this.dataTypes.Add(itemType);
-            this.data.Add(item);
+            this.dataSet.DataTypes.Add(itemType);
+            this.dataSet.Data.Add(item);
         }               
 
         public List<T> Get<T>()
         {
-            return data.Where(o => o is T).Select(o => (T)o).ToList() as List<T>;
+            return this.dataSet.Data.Where(o => o is T).Select(o => (T)o).ToList() as List<T>;
         }
 
         public void Write()
@@ -36,9 +34,6 @@ namespace BardSong
         }
 
         private readonly IRepositoryWriter writer;
-
-        internal readonly List<object> data;
-
-        internal readonly HashSet<Type> dataTypes;
-    }
+        private readonly IDataSet dataSet;
+        }
 }
