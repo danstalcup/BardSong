@@ -10,16 +10,18 @@ namespace BardSong
     { 
         public string Filepath { get; set; }                   
 
-        public Repository()
-        {            
+        public Repository(IWriter writer)
+        {
+            this.writer = writer;
+
             this.data = new List<object>();
-            this.dataTypes = new HashSet<string>();
+            this.dataTypes = new HashSet<Type>();
         }
         
         public void Add(object item)
         {
             var itemType = item.GetType();
-            this.dataTypes.Add(itemType.Name);
+            this.dataTypes.Add(itemType);
             this.data.Add(item);
         }               
 
@@ -28,8 +30,15 @@ namespace BardSong
             return data.Where(o => o is T).Select(o => (T)o).ToList() as List<T>;
         }
 
-        private readonly List<object> data;
+        public void Write()
+        {
+            this.writer.Write(this);
+        }
 
-        private readonly HashSet<string> dataTypes;
+        private readonly IWriter writer;
+
+        internal readonly List<object> data;
+
+        internal readonly HashSet<Type> dataTypes;
     }
 }
