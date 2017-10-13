@@ -1,5 +1,4 @@
-﻿using BardSong.Impl;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,20 +8,28 @@ namespace BardSong
 {
     public class Repository
     { 
-        public string Filepath { get; set; }
+        public string Filepath { get; set; }                   
 
-        public Repository(IDataSetManager dataSetManager)
+        public Repository()
         {            
-            this.dataSetManager = dataSetManager;
+            this.data = new List<object>();
+            this.dataTypes = new HashSet<string>();
         }
         
         public void Add(object item)
         {
-            var typeOfItem = item.GetType();
-            var dataset = dataSetManager.GetDataSet(typeOfItem.Name);
-            dataset.Add(item);
+            var itemType = item.GetType();
+            this.dataTypes.Add(itemType.Name);
+            this.data.Add(item);
+        }               
+
+        public List<T> Get<T>()
+        {
+            return data.Where(o => o is T).Select(o => (T)o).ToList() as List<T>;
         }
-        
-        private readonly IDataSetManager dataSetManager;
+
+        private readonly List<object> data;
+
+        private readonly HashSet<string> dataTypes;
     }
 }
