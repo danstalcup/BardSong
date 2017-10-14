@@ -18,22 +18,12 @@ namespace BardSong
         
         public void Add(object item)
         {
-            var itemType = item.GetType();
-            this.dataSet.DataTypes.Add(itemType);
-            this.dataSet.Data.Add(item);
+            dataSet.Add(item);
         }               
 
         public List<T> Get<T>(bool exactTypeOnly=false)
         {
-            if (exactTypeOnly)
-            {
-                return this.dataSet.Data.Where(o => o.GetType().Equals(typeof(T))).Select(o => (T)o).ToList() as List<T>;
-            }
-            else
-            { 
-                return this.dataSet.Data.Where(o => o is T).Select(o => (T)o).ToList() as List<T>;
-            }
-            
+            return this.dataSet.Get<T>(exactTypeOnly);            
         }
 
         public void Write()

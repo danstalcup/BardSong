@@ -12,6 +12,11 @@ namespace BardSong
 
         HashSet<Type> DataTypes { get; }
 
-        List<string> DataTypeNames { get; }
+        List<string> GetDataTypeNames();
+
+        void Add(object item);
+
+        List<T> Get<T>(bool exactTypeOnly = false);
+
     }
 }
