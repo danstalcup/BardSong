@@ -10,10 +10,10 @@ namespace BardSong
     { 
         public string Filepath { get; set; }                   
 
-        public Repository(IRepositoryWriter writer, IDataSet dataSet)
+        public Repository()//IDataSet dataSet)//(IRepositoryWriter writer, IDataSet dataSet)
         {
-            this.writer = writer;
-            this.dataSet = dataSet;           
+            //this.writer = writer;
+            //this.dataSet = dataSet;           
         }
         
         public void Add(object item)
@@ -23,15 +23,15 @@ namespace BardSong
 
         public List<T> Get<T>(bool exactTypeOnly=false)
         {
-            return this.dataSet.Get<T>(exactTypeOnly);            
+            return null;//this.dataSet.Get<T>(exactTypeOnly);            
         }
 
         public void Write()
         {
-            this.writer.Write(this);
+            //this.writer.Write(this);
         }
 
-        private readonly IRepositoryWriter writer;
+        //private readonly IRepositoryWriter writer;
         private readonly IDataSet dataSet;
-        }
+    }
 }

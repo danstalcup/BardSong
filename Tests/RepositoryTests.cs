@@ -19,12 +19,7 @@ namespace Tests
         public void SetUp()
         {
             this.mocker = new AutoMoqer();
-            this.classUnderTest = mocker.Create<Repository>();
-
-            var dataSet = new DataSet();
-
-            this.mocker.GetMock<IDataSet>().Setup(ds => ds.Data).Returns(dataSet.Data);
-            this.mocker.GetMock<IDataSet>().Setup(ds => ds.DataTypes).Returns(dataSet.DataTypes);
+            this.classUnderTest = mocker.Create<Repository>();                        
         }       
 
         [Test]

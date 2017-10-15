@@ -17,6 +17,7 @@ namespace BardSong.Impl
 
         public void Write(Repository repository)
         {
+            return;
             //JsonConvert.SerializeObject(repository.)
         }
 

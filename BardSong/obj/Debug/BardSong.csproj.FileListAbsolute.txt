@@ -1,7 +1,7 @@
 C:\Users\Dan\Dropbox\Programming\BardSong\BardSong\bin\Debug\BardSong.dll
 C:\Users\Dan\Dropbox\Programming\BardSong\BardSong\bin\Debug\BardSong.pdb
-C:\Users\Dan\Dropbox\Programming\BardSong\BardSong\obj\Debug\BardSong.csprojResolveAssemblyReference.cache
-C:\Users\Dan\Dropbox\Programming\BardSong\BardSong\obj\Debug\BardSong.dll
-C:\Users\Dan\Dropbox\Programming\BardSong\BardSong\obj\Debug\BardSong.pdb
 C:\Users\Dan\Dropbox\Programming\BardSong\BardSong\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Dan\Dropbox\Programming\BardSong\BardSong\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Dan\Dropbox\Programming\BardSong\BardSong\obj\Debug\BardSong.dll
+C:\Users\Dan\Dropbox\Programming\BardSong\BardSong\obj\Debug\BardSong.pdb
+C:\Users\Dan\Dropbox\Programming\BardSong\BardSong\obj\Debug\BardSong.csprojResolveAssemblyReference.cache

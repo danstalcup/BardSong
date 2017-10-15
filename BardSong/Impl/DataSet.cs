@@ -29,7 +29,8 @@ namespace BardSong.Impl
 
         public List<string> GetDataTypeNames()
         {
-            return _dataTypes.Select(dt => dt.Name).ToList();
+            var toReturn = _dataTypes.Select(dt => dt.Name).ToList();
+            return toReturn;
         }
 
         public void Add(object item)

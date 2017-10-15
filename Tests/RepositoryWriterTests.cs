@@ -15,15 +15,13 @@ namespace Tests
     public class RepositoryWriterTests
     {
         private AutoMoqer mocker;
-        private RepositoryWriter classUnderTest;
-        private Repository repository;
+        private RepositoryWriter classUnderTest;        
 
         [SetUp]
         public void SetUp()
         {
             mocker = new AutoMoqer();
-            classUnderTest = mocker.Create<RepositoryWriter>();
-            repository = mocker.Create<Repository>();       
+            classUnderTest = mocker.Create<RepositoryWriter>();               
         }
 
         [Test]
@@ -33,7 +31,7 @@ namespace Tests
             this.mocker.GetMock<IDataSet>().Setup(ds => ds.DataTypes).Returns(new HashSet<Type> { typeof(Test_A) });
 
             //act
-            classUnderTest.Write(repository);
+            //classUnderTest.Write(repository);
 
             //assert
             //this.mocker.GetMock<IFileWriter>().Verify(ifw => ifw.WriteToFile(It.IsAny<string>(), It.IsAny<string>()), Times.Exactly(2));

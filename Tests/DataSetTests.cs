@@ -385,9 +385,19 @@ namespace Tests
         }
 
         [Test]
+        public void AddThenGetDataTypeNames_NoneAdded_ZeroDataTypes()
+        {
+            //assert
+            Assert.That(classUnderTest.GetDataTypeNames().Count, Is.EqualTo(0));
+        }
+        [Test]
         public void AddThenGetDataTypeNames_OneTypeOneInstanceAdded_OneDataType()
         {
+            //act
+            classUnderTest.Add(new Test_A());
 
+            //assert
+            Assert.That(classUnderTest.GetDataTypeNames().Count, Is.EqualTo(1));
         }
 
         [Test]
